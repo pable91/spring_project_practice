@@ -22,9 +22,13 @@ class OrderServiceImplTest {
 
     @BeforeEach
     public void beforeEach() {
-        AppConfig appConfig = new AppConfig();
-        memberService = appConfig.memberService();
-        orderService = appConfig.orderService();
+        //AppConfig appConfig = new AppConfig();
+        //memberService = appConfig.memberService();
+        //orderService = appConfig.orderService();
+
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        memberService = ac.getBean("memberService", MemberService.class);
+        orderService = ac.getBean("orderService", OrderService.class);
     }
 
     @Test
