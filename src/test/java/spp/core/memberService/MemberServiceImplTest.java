@@ -14,6 +14,7 @@ class MemberServiceImplTest {
 
     MemberService memberService;
 
+    // beforeeach는 하나의 테스트가 실행되기전 실행되는 함수
     @BeforeEach
     public void BeforeEach() {
         //AppConfig ac = new AppConfig();
