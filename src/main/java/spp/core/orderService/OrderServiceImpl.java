@@ -10,9 +10,9 @@ public class OrderServiceImpl implements  OrderService{
     private Food food;
     private MemberRepository memberRepository;
 
-    public OrderServiceImpl(KoreanFood koreanFood, MemoryMemberRepository memoryMemberRepository) {
-        food = koreanFood;
-        memberRepository = memoryMemberRepository;
+    public OrderServiceImpl(Food food, MemberRepository memberRepository) {
+        this.food = food;
+        this.memberRepository = memberRepository;
     }
 
     @Override

@@ -7,20 +7,20 @@ import spp.core.repository.MemoryMemberRepository;
 
 public class MemberServiceImpl implements MemberService {
 
-    private MemberRepository memberRepo;
+    private MemberRepository memberRepository;
 
-    public MemberServiceImpl(MemoryMemberRepository memoryMemberRepository) {
-        memberRepo = memoryMemberRepository;
+    public MemberServiceImpl(MemberRepository memoryMemberRepository) {
+        this.memberRepository = memoryMemberRepository;
     }
 
     @Override
     public void join(Member member) {
-        if (memberRepo.getMember(member.getId()) == null )
-            memberRepo.addMember(member);
+        if (this.memberRepository.getMember(member.getId()) == null )
+            this.memberRepository.addMember(member);
     }
 
     @Override
     public Member findByMember(int id) {
-        return memberRepo.getMember(id);
+        return this.memberRepository.getMember(id);
     }
 }
