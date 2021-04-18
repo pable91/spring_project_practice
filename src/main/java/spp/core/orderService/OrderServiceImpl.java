@@ -7,8 +7,13 @@ import spp.core.repository.MemberRepository;
 import spp.core.repository.MemoryMemberRepository;
 
 public class OrderServiceImpl implements  OrderService{
-    private Food food = new KoreanFood();
-    private MemberRepository memberRepository = new MemoryMemberRepository();
+    private Food food;
+    private MemberRepository memberRepository;
+
+    public OrderServiceImpl(KoreanFood koreanFood, MemoryMemberRepository memoryMemberRepository) {
+        food = koreanFood;
+        memberRepository = memoryMemberRepository;
+    }
 
     @Override
     public int order(int memberId) {

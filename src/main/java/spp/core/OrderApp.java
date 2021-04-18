@@ -12,9 +12,10 @@ import spp.core.repository.MemoryMemberRepository;
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberRepository memberRepository = new MemoryMemberRepository();
-        MemberService memberService = new MemberServiceImpl();
-        OrderService orderService = new OrderServiceImpl();
+        AppConfig appConfig = new AppConfig();
+
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Member member = new AdminMember(2321, "KKK");
         memberService.join(member);
