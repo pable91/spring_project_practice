@@ -15,10 +15,11 @@ public class OrderApp {
 
     public static void main(String[] args) {
         //AppConfig appConfig = new AppConfig();
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        //ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
 
-        MemberService memberService = ac.getBean("memberService", MemberService.class);
-        OrderService orderService = ac.getBean("orderService", OrderService.class);
+        MemberService memberService = ac.getBean(MemberService.class);
+        OrderService orderService = ac.getBean(OrderService.class);
 
         Member member = new AdminMember(2321, "KKK");
         memberService.join(member);

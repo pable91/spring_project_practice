@@ -41,6 +41,4 @@ class OrderServiceImplTest {
         int price = orderService.order(member.getId());
         Assertions.assertThat(price).isEqualTo(10000);
     }
-
-
 }

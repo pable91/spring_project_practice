@@ -1,5 +1,8 @@
 package spp.core.food;
 
+import org.springframework.stereotype.Component;
+
+//@Component
 public class JapanFood implements Food{
     private final static int price = 20000;
 
