@@ -1,6 +1,8 @@
 package spp.core.orderService;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Required;
 import org.springframework.stereotype.Component;
 import spp.core.food.Food;
 import spp.core.food.KoreanFood;
@@ -9,15 +11,10 @@ import spp.core.repository.MemberRepository;
 import spp.core.repository.MemoryMemberRepository;
 
 @Component
+@RequiredArgsConstructor
 public class OrderServiceImpl implements  OrderService{
-    private Food food;
-    private MemberRepository memberRepository;
-
-    @Autowired
-    public OrderServiceImpl(Food food, MemberRepository memberRepository) {
-        this.food = food;
-        this.memberRepository = memberRepository;
-    }
+    private final Food food;
+    private final MemberRepository memberRepository;
 
     @Override
     public int order(int memberId) {
